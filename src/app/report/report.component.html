@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-5"><h3>Payslip for a flexible pay cycle</h3></div>
+</div>
+<div class="row">
+  <div class="col-sm-2"><b>Full Name</b></div>
+  <div class="col-sm-3"> {{this.reportService.fullname}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2"><b>Pay Period</b></div>
+  <div class="col-sm-3"> {{this.reportService.payPeriod}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2"><b>Gross Income</b></div>
+  <div class="col-sm-3"> {{this.reportService.grossIncome}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2"><b>Income Tax</b></div>
+  <div class="col-sm-3"> {{this.reportService.incomeTax}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2"><b>Net Income</b></div>
+  <div class="col-sm-3"> {{this.reportService.netIncome}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2"><b>Super Amount</b></div>
+  <div class="col-sm-3"> {{this.reportService.superAmount}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-5" style="text-align: right">
+    <button class="btn btn-primary" routerLink = "/">Go to user inputs</button>
+  </div>
+</div>

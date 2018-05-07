@@ -1,0 +1,8 @@
+input.ng-invalid.ng-touched{
+    border: 1px solid red !important;
+}
+
+span.ng-tns-c2-0.ui-calendar.ui-calendar-w-btn{
+    border: 1px solid red !important;
+    
+}

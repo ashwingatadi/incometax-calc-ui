@@ -1,0 +1,97 @@
+<form (ngSubmit) = "onSubmit()" #f="ngForm">
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <label for="firstName">First Name</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="text" 
+      class="form-control" 
+      name="firstName" 
+      placeholder="First Name" 
+      ngModel
+      required
+      #firstName = "ngModel"/>
+      <span class="help-block" *ngIf="!firstName.valid && firstName.touched">Please enter a valid first name</span>      
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <label for="lastname">Last Name</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="text" 
+      class="form-control" 
+      name="lastName" 
+      placeholder="Last Name" 
+      ngModel
+      required
+      #lastName = "ngModel"/>
+      <span class="help-block" *ngIf="!lastName.valid && lastName.touched">Please enter a valid last name</span>      
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <label for="annualSalary">Annual Salary</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="number" 
+      class="form-control" 
+      name="annualSalary" 
+      placeholder="Annual Salary" 
+      min="0"
+      ngModel
+      required
+      #annualSalary = "ngModel"/>
+      <span class="help-block" *ngIf="!annualSalary.valid && annualSalary.touched">Please enter a valid annual salary</span>  
+      <p *ngIf="annualSalary.errors?.min">error message</p>          
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <label for="superRate">Super Rate ( 0 - 12%)</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="number" 
+      class="form-control" 
+      min="0" 
+      max="12" 
+      name="superRate" 
+      placeholder="Super Rate" 
+      ngModel
+      required
+      #superRate = "ngModel"/>
+      <span class="help-block" *ngIf="!superRate.valid && superRate.touched">Please enter a valid super rate</span>      
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <label for="paymentStartDate">Payment Start Date</label>
+    </div>
+    <div class="col-sm-4">
+          <p-calendar 
+          #calendar
+          #cal = "ngModel"
+          name="paymentStartDate" 
+          [showIcon]="true" 
+          dateFormat="MM yy" 
+          placeholder="Payment Date"
+          ngModel
+          required
+          ></p-calendar>
+          <span class="help-block" *ngIf="!cal.valid && cal.touched">Please enter a valid date</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6" style="text-align: right">
+      <button type="submit" 
+      class="btn btn-primary"
+      [disabled] = "!f.valid">Generate Report</button>
+    </div>
+  </div>
+  <p>{{incometax}}</p>
+</form>
