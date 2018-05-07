@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ReportComponent {
 
-  constructor(private router: Router, private reportService: ReportService){
+  constructor(private router: Router, public reportService: ReportService){
     if(this.reportService.fullname === undefined){
       this.router.navigate(['/'])
     }
